@@ -27,11 +27,11 @@ class CallsController < ApplicationController
   def create
     @call = Call.new(call_params)
     @call.update_attribute(:date, Date.today) #Put in the current time
-    @call.update_attribute(:time, Time.zone.now)   #Put in the current date
+    @call.update_attribute(:time, Time.use_zone('Central Time (US & Canada)') {Time.current})   #Put in the current date
 
     respond_to do |format|
       if @call.save
-        format.html { redirect_to @call, notice: 'Call was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Call was successfully created.' } 
         format.json { render action: 'show', status: :created, location: @call }
       else
         format.html { render action: 'new' }
