@@ -26,8 +26,8 @@ class CallsController < ApplicationController
   # POST /calls.json
   def create
     @call = Call.new(call_params)
-    @call.update_attribute(:date, Date.today) #Put in the current time
-    @call.update_attribute(:time, Time.use_zone('Central Time (US & Canada)') {Time.current})   #Put in the current date
+    @call.update_attribute(:date, Date.current) #Put in the current time
+    @call.update_attribute(:time, Time.zone.now)   #Put in the current date
 
     respond_to do |format|
       if @call.save

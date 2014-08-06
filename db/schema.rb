@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140803222407) do
     t.boolean  "rvm"
     t.boolean  "lvm"
     t.date     "date"
-    t.time     "time"
+    t.datetime "time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

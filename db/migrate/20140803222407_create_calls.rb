@@ -6,7 +6,7 @@ class CreateCalls < ActiveRecord::Migration
       t.boolean :rvm
       t.boolean :lvm
       t.date :date
-      t.time :time
+      t.datetime :time
 
       t.timestamps
     end
