@@ -4,7 +4,8 @@ class CallsController < ApplicationController
   # GET /calls
   # GET /calls.json
   def index
-    @calls = Call.all
+    @calls = Call.where(date: Date.today)
+    @count = @calls.count
   end
 
   # GET /calls/1
@@ -26,7 +27,7 @@ class CallsController < ApplicationController
   def create
     @call = Call.new(call_params)
     @call.update_attribute(:date, Date.today) #Put in the current time
-    @call.update_attribute(:time, Time.now)   #Put in the current date
+    @call.update_attribute(:time, Time.zone.now)   #Put in the current date
 
     respond_to do |format|
       if @call.save

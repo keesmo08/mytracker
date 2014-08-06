@@ -1,14 +1,16 @@
-<h1>Listing calls</h1>
+<h1>Listing calls</h1><br/>
+
+<%= @count %> - Calls made today<br/><br/>
 
 <table>
   <thead>
     <tr>
       <th>Date</th>
+      <th>Time</th>
       <th>Results</th>
       <th>Spoken</th>
       <th>Rvm</th>
       <th>Lvm</th>
-      <th>Time</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,12 +20,12 @@
   <tbody>
     <% @calls.each do |call| %>
       <tr>
-        <td><%= call.date %></td>
+        <td><%= call.date.strftime("%a") %></td>
+        <td><%= call.time.strftime("%I:%M") %></td>
         <td><%= call.results %></td>
         <td><%= call.spoken %></td>
         <td><%= call.rvm %></td>
         <td><%= call.lvm %></td>
-        <td><%= call.time %></td>
         <td><%= link_to 'Show', call %></td>
         <td><%= link_to 'Edit', edit_call_path(call) %></td>
         <td><%= link_to 'Destroy', call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
