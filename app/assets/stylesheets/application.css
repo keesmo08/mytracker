@@ -12,7 +12,18 @@
  *= require_tree .
  */
 
-body { padding-top: 100px; }
+body { 
+	padding-top: 80px; 
+	font-family: Arvo;
+}
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
+
+td.buttons { width: 70px; }
+
+h1 { margin-bottom: 30px; }
+
+.field {
+  margin-bottom: 20px;
+}

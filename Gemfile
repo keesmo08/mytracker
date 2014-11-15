@@ -3,6 +3,17 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
+gem 'devise'
+gem 'bootstrap-sass', '2.3.2.0'
+
+# Gem install for chartkick example
+gem 'chartkick', '~> 1.2.4'
+gem 'groupdate', '~> 2.1.1'
+gem 'active_median', '~> 0.1.0' 
+
+# NEEDED FOR MYSQL TO WORK
+gem 'mysql2','0.3.11'
+
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
