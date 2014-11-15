@@ -1,16 +1,17 @@
 class CallsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_call, only: [:show, :edit, :update, :destroy]
 
   # GET /calls
   # GET /calls.json
   def index
-    #@calls = Call.where(date: Date.today)
-    @calls = Call.all
-    #@calls = Call.activeAtDate()
-    @callCountWeekly = Call.activeAtDate(5.day.ago).count
-    @callCountDaily = Call.activeAtDate().count
-    @callCountWeeklyAverage = ((Call.activeAtDate(5.day.ago).count) / 5)
-    @callCountMonthlyAverage = ((Call.activeAtDate(1.month.ago).count) / 20)
+
+    @calls = current_user.calls
+
+    @callCountWeekly = current_user.calls.activeAtDate(5.day.ago).count
+    @callCountDaily = @calls.activeAtDate().count
+    @callCountWeeklyAverage = ((@calls.activeAtDate(5.day.ago).count) / 5)
+    @callCountMonthlyAverage = ((@calls.activeAtDate(1.month.ago).count) / 20)
   end
 
   # GET /calls/1
@@ -30,7 +31,7 @@ class CallsController < ApplicationController
   # POST /calls
   # POST /calls.json
   def create
-    @call = Call.new(call_params)
+    @call = current_user.calls.new(call_params)
     @call.update_attribute(:date, Date.current)    #Put in the current time
     @call.update_attribute(:time, Time.zone.now)   #Put in the current date
 
