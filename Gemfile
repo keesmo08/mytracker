@@ -11,12 +11,6 @@ gem 'chartkick', '~> 1.2.4'
 gem 'groupdate', '~> 2.1.1'
 gem 'active_median', '~> 0.1.0' 
 
-# NEEDED FOR MYSQL TO WORK
-gem 'mysql2','0.3.11'
-
-
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -45,8 +39,10 @@ group :doc do
 end
 
 group :development do
-  gem 'sqlite3'
+  # NEEDED FOR MYSQL TO WORK
+  gem 'mysql2','0.3.11'
 end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
