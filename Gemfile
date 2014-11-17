@@ -11,6 +11,8 @@ gem 'chartkick', '~> 1.2.4'
 gem 'groupdate', '~> 2.1.1'
 gem 'active_median', '~> 0.1.0' 
 
+# Cancan for Admin structure
+gem 'cancancan', '~> 1.9'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
