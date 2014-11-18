@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @drop.account %>
+</p>
+
+<p>
+  <strong>Scheduledrop:</strong>
+  <%= @drop.scheduledrop %>
+</p>
+
+<p>
+  <strong>Actualdrop:</strong>
+  <%= @drop.actualdrop %>
+</p>
+
+<p>
+  <strong>Contactname:</strong>
+  <%= @drop.contactname %>
+</p>
+
+<p>
+  <strong>Contactaddress:</strong>
+  <%= @drop.contactaddress %>
+</p>
+
+<p>
+  <strong>Contactphone:</strong>
+  <%= @drop.contactphone %>
+</p>
+
+<p>
+  <strong>Contactemail:</strong>
+  <%= @drop.contactemail %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @drop.notes %>
+</p>
+
+<%= link_to 'Edit', edit_drop_path(@drop) %> |
+<%= link_to 'Back', drops_path %>

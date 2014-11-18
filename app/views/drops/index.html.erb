@@ -1,0 +1,45 @@
+<% if user_signed_in? %>
+
+<h1>Drops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account</th>
+      <th>Scheduledrop</th>
+      <th>Actualdrop</th>
+      <th>Contactname</th>
+      <th>Contactaddress</th>
+      <th>Contactphone</th>
+      <th>Contactemail</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drops.each do |drop| %>
+      <tr>
+        <td><%= drop.account %></td>
+        <td><%= drop.scheduledrop %></td>
+        <td><%= drop.actualdrop %></td>
+        <td><%= drop.contactname %></td>
+        <td><%= drop.contactaddress %></td>
+        <td><%= drop.contactphone %></td>
+        <td><%= drop.contactemail %></td>
+        <td><%= drop.notes %></td>
+        <td><%= link_to 'Show', drop %></td>
+        <td><%= link_to 'Edit', edit_drop_path(drop) %></td>
+        <td><%= link_to 'Destroy', drop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Drop', new_drop_path %>
+
+<% end %>

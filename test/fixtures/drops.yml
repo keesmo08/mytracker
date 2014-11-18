@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account: MyString
+  scheduledrop: 2014-11-17 18:33:21
+  actualdrop: 2014-11-17 18:33:21
+  contactname: MyString
+  contactaddress: MyString
+  contactphone: MyString
+  contactemail: MyString
+  notes: MyString
+
+two:
+  account: MyString
+  scheduledrop: 2014-11-17 18:33:21
+  actualdrop: 2014-11-17 18:33:21
+  contactname: MyString
+  contactaddress: MyString
+  contactphone: MyString
+  contactemail: MyString
+  notes: MyString

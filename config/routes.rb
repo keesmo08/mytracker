@@ -1,6 +1,8 @@
 Mytracker::Application.routes.draw do
   
 
+  resources :drops
+
   devise_for :users
   root :to => redirect('/calls')
   
