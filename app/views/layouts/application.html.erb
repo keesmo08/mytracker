@@ -45,8 +45,8 @@
         <% if user_signed_in? %>
           <li class="unactive"><a href="#">Today's Activity</a></li>
           <li class="active"><a href="/calls">Dashboard</a></li>
-          <li class="unactive"><a href="/calls/new">Log Call</a></li>
-          <li class="unactive"><a href="/drops">Log Drop</a></li>
+          <li class="unactive"><a href="/calls/new">Calls</a></li>
+          <li class="unactive"><a href="/drops">Drops</a></li>
           Logged in as <strong><%= current_user.email %></strong>.
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
