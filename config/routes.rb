@@ -1,6 +1,10 @@
 Mytracker::Application.routes.draw do
   
 
+  resources :contacts
+
+  resources :accounts
+
   resources :drops
 
   devise_for :users

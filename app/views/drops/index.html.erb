@@ -1,14 +1,24 @@
 <% if user_signed_in? %>
 
+<h4>The steps to Drop</h4>
+1. Select an account to drop to (future)
+2. Add account to drop
+3. Create an email - default outlook
+4. Map locations
+5. Mark that I dropped - three things - Scheduled an appointment, Spoke with contact, left drop with someone, 
+6. Enter notes 
+7. Decide on next steps
+
 <h1>Planned Drops</h1>
 
-<h1>Drops</h1>
+
 
 <table>
   <thead>
     <tr>
-      <th>Account</th>
       <th>Scheduledrop</th>
+      <th>Account</th>
+      <th>Time of Day</th>
       <th>Actualdrop</th>
       <th>Contactname</th>
       <th>Contactaddress</th>
@@ -24,8 +34,9 @@
   <tbody>
     <% @drops.each do |drop| %>
       <tr>
+        <td><%= drop.scheduledrop.strftime("%a %d") %></td>
         <td><%= drop.account %></td>
-        <td><%= drop.scheduledrop %></td>
+        <td><%= drop.time_of_day %></td>
         <td><%= drop.actualdrop %></td>
         <td><%= drop.contactname %></td>
         <td><%= drop.contactaddress %></td>

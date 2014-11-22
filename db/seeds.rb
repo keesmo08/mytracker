@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #User.create!(email: , name:)
+
+Account.create!([{ account_name: 'Lamers' }, { account_name: 'Jones Sign' }, { account_name: 'Foth' } ])

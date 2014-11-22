@@ -15,6 +15,7 @@ class DropsController < ApplicationController
 
   # GET /drops/new
   def new
+    @drop_accounts = Account.all.map{|u| [ u.account_name, u.account_name ]}
     @drop = Drop.new
   end
 

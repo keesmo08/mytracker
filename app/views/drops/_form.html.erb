@@ -13,35 +13,19 @@
 
   <div class="field">
     <%= f.label :account %><br>
-    <%= f.text_field :account %>
+    <%= f.select(:account, @drop_accounts) %>
   </div>
   <div class="field">
     <%= f.label :scheduledrop %><br>
     <%= f.datetime_select :scheduledrop %>
   </div>
   <div class="field">
-    <%= f.label :actualdrop %><br>
-    <%= f.datetime_select :actualdrop %>
+    <%= f.label :time_of_day %><br>
+    <%= f.select :time_of_day, options_for_select(%w[early-morning mid-morning late-morning early-afternoon mid-afternoon late-afternoon]) %><br>
   </div>
   <div class="field">
     <%= f.label :contactname %><br>
-    <%= f.text_field :contactname %>
-  </div>
-  <div class="field">
-    <%= f.label :contactaddress %><br>
-    <%= f.text_field :contactaddress %>
-  </div>
-  <div class="field">
-    <%= f.label :contactphone %><br>
-    <%= f.text_field :contactphone %>
-  </div>
-  <div class="field">
-    <%= f.label :contactemail %><br>
-    <%= f.text_field :contactemail %>
-  </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_field :notes %>
+    <%= f.text_field :contactname %><u>select</u>
   </div>
   <div class="actions">
     <%= f.submit %>
