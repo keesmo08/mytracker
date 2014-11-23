@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   # GET /contacts
@@ -15,15 +16,18 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    @contact_accounts = load_accounts
   end
 
   # GET /contacts/1/edit
   def edit
+    @contact_accounts = load_accounts
   end
 
   # POST /contacts
   # POST /contacts.json
   def create
+    @account = contact_form_account_id
     @contact = Contact.new(contact_params)
 
     respond_to do |format|
@@ -69,6 +73,16 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:contact_name, :contact_address, :contact_phone, :contact_email, :contact_active)
+      params.require(:contact).permit(:contact_name, :contact_address, :contact_phone, :contact_email, :contact_active, :account_id)
+    end
+
+    # Testing for requesting the account id in the form
+    def contact_form_account_id
+      params.require(:contact).permit(:account_id)
+    end
+
+    # Load the accounts into an array
+    def load_accounts
+        Account.all.map{|u| [ u.account_name, u.id ]}
     end
 end

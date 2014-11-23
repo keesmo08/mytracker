@@ -25,8 +25,9 @@
   </div>
   <div class="field">
     <%= f.label :contactname %><br>
-    <%= f.text_field :contactname %><u>select</u>
+    <%= f.select(:contactname, @drop_contacts) %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

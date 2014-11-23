@@ -15,12 +15,15 @@ class DropsController < ApplicationController
 
   # GET /drops/new
   def new
-    @drop_accounts = Account.all.map{|u| [ u.account_name, u.account_name ]}
+    @drop_accounts = load_accounts
+    @drop_contacts = load_contacts
     @drop = Drop.new
   end
 
   # GET /drops/1/edit
   def edit
+    @drop_accounts = load_accounts
+    @drop_contacts = load_contacts
   end
 
   # POST /drops
@@ -72,5 +75,15 @@ class DropsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def drop_params
       params.require(:drop).permit(:account, :scheduledrop, :actualdrop, :contactname, :contactaddress, :contactphone, :contactemail, :notes)
+    end
+
+    # Load the accounts into an array
+    def load_accounts
+        Account.all.map{|u| [ u.account_name, u.account_name ]}
+    end
+
+    # Load the contacts into an array
+    def load_contacts
+        Contact.all.map{|u| [ u.contact_name, u.contact_name ]}
     end
 end

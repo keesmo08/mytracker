@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>User Id</th>
+      <th>Account Id</th>
       <th>Contact name</th>
       <th>Contact address</th>
       <th>Contact phone</th>
@@ -17,6 +19,8 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
+        <td><%= contact.user_id %></td>
+        <td><%= contact.account_id %></td>
         <td><%= contact.contact_name %></td>
         <td><%= contact.contact_address %></td>
         <td><%= contact.contact_phone %></td>

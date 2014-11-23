@@ -28,6 +28,10 @@
     <%= f.text_field :contact_email %>
   </div>
   <div class="field">
+    <%= f.label :account_id %><br>
+    <%= f.select(:account_id, @contact_accounts) %>
+  </div>
+  <div class="field">
     <%= f.label :contact_active %><br>
     <%= f.check_box :contact_active %>
   </div>
