@@ -2,13 +2,13 @@ Mytracker::Application.routes.draw do
   
 
   resources :contacts
-
+  resources :dashboards
   resources :accounts
 
   resources :drops
 
   devise_for :users
-  root :to => redirect('/calls')
+  root :to => redirect('/dashboards')
   
   resources :calls
 

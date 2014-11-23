@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
   def show
   end
 
+
   # GET /contacts/new
   def new
     @contact = Contact.new
@@ -27,7 +28,6 @@ class ContactsController < ApplicationController
   # POST /contacts
   # POST /contacts.json
   def create
-    @account = contact_form_account_id
     @contact = Contact.new(contact_params)
 
     respond_to do |format|
