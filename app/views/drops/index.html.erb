@@ -16,6 +16,7 @@
 <table>
   <thead>
     <tr>
+      <th>Generate Email</th>
       <th>Scheduledrop</th>
       <th>Account</th>
       <th>Time of Day</th>
@@ -34,6 +35,7 @@
   <tbody>
     <% @drops.each do |drop| %>
       <tr>
+        <td><%= link_to 'Generate Email', '#' %></td>
         <td><%= drop.scheduledrop.strftime("%a %d") %></td>
         <td><%= drop.account %></td>
         <td><%= drop.time_of_day %></td>
